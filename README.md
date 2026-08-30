@@ -2,6 +2,8 @@
 
 Prototype submission for Intain Campus FinTech Challenge 2026 (AI Track).
 
+**Live Demo:** https://loan-intelligence-engine.streamlit.app/
+
 ## What this project does
 
 Given loan-level monthly performance data, this project:
