@@ -1,0 +1,4 @@
+current_status,current,default,delinquent_30_60,delinquent_90_plus,prepaid
+current,0.939,0.007,0.022,0.018,0.015
+delinquent_30_60,0.533,0.012,0.421,0.016,0.018
+delinquent_90_plus,0.0,0.135,0.592,0.261,0.012
