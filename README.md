@@ -27,10 +27,14 @@ code/
   01_data_profiling_and_prediction_model.py   -> Tasks 1, 2, 4, 5, 6 + generates submission.csv
   02_transition_model.py                      -> Task 3 (monthly transition model)
   03_llm_reviewer_copilot.py                  -> Task 7 (LLM reviewer notes)
+  04_stress_test.py                           -> Advanced feature: synthetic-data stress testing (proves the pipeline survives extreme/broken data)
+  05_bias_fairness_analysis.py                -> Advanced feature: bias/fairness analysis (checks predicted risk gaps across state, occupancy type, credit band)
 reports/
   01_results.md                               -> Auto-generated: full output of script 01 (profiling, model metrics, feature importance, anomalies, scenarios)
   02_results.md                               -> Auto-generated: full output of script 02 (transition matrix, baseline comparison)
   03_results.md                               -> Auto-generated: full output of script 03 (LLM-generated reviewer notes, rejected-output example)
+  04_stress_test_results.md                   -> Auto-generated: full output of script 04 (stress test against deliberately broken data)
+  05_bias_fairness_results.md                 -> Auto-generated: full output of script 05 (predicted risk by state, occupancy type, credit band)
   model_card.md                               -> Model objective, data, features, metrics, limitations, known failure modes
   data_explainability_scenario_reports.md     -> Data quality findings, explainability (top drivers, error analysis), and scenario simulation results
   ai_development_log.md                       -> How AI tools were used during development: prompts used, accepted/rejected AI output, human review process, lessons learned
@@ -66,6 +70,8 @@ Then open `.env` and replace `your_key_here` with your real key (get one free at
 python3 code/01_data_profiling_and_prediction_model.py
 python3 code/02_transition_model.py
 python3 code/03_llm_reviewer_copilot.py
+python3 code/04_stress_test.py
+python3 code/05_bias_fairness_analysis.py
 ```
 
 Each script prints its results directly in the terminal, **and also writes the same results into a matching report file** in `reports/` (`01_results.md`, `02_results.md`, `03_results.md`) — so results can be reviewed later without re-running anything.
@@ -75,6 +81,11 @@ Each script prints its results directly in the terminal, **and also writes the s
 ```
 streamlit run app.py
 ```
+
+## Advanced Features (beyond minimum requirements)
+
+- **Synthetic-data stress testing** (`code/04_stress_test.py`) — deliberately injects extreme/broken data (impossible values, unseen categories, corrupted dates, duplicates) into the pipeline to prove it handles messy real-world conditions, not just clean practice data.
+- **Bias/fairness analysis** (`code/05_bias_fairness_analysis.py`) — checks whether predicted default risk varies meaningfully across state, occupancy type, and credit score band, flagging any large, unexplained gaps for human review.
 
 ## What's in each report file
 
