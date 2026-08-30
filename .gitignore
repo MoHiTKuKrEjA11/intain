@@ -1,8 +1,14 @@
 # Never commit real secrets
 .env
 
-# Data files (too large / provided separately by organizers)
+# Ignore any large/raw data files by default...
 *.csv
+
+# ...but always keep the data files this project actually needs
+!data/sim_train.csv
+!data/sim_test.csv
+
+# ...and always keep the key output files
 !outputs/submission.csv
 !outputs/transition_matrix.csv
 !outputs/llm_prompt_log.csv
