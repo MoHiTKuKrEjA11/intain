@@ -4,3 +4,4 @@ scikit-learn
 tabulate
 google-genai
 python-dotenv
+streamlit
