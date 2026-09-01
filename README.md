@@ -80,7 +80,7 @@ Each script prints its results directly in the terminal, **and also writes the s
 
 ```
 streamlit run app.py
-```
+``` 
 
 ## Advanced Features (beyond minimum requirements)
 
